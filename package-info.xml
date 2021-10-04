@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<name>Simple Menu Icons</name>
+	<id>smfhispano:smi</id>
+	<version>2.0</version>
+	<type>modification</type>
+
+	<install for="2.0 - 2.0.99">
+		<readme parsebbc="true">readme.txt</readme>
+		<require-dir name="smi" destination="$imagesdir" />
+		<require-file name="Subs-SMI.php" destination="$sourcedir" />
+		<require-dir name="lang/SMI" destination="$languagedir" />
+		<code>hooks/2.0_add.php</code>
+		<redirect url="?action=admin;area=modsettings" />
+	</install>
+
+	<uninstall for="2.0 - 2.0.99">
+		<code>hooks/2.0_remove.php</code>
+		<remove-dir name="$imagesdir/smi" />
+		<remove-file name="$sourcedir/Subs-SMI.php" />
+		<remove-dir name="$languagedir/SMI" />
+	</uninstall>
+</package-info>
